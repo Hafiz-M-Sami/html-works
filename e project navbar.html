@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    padding: 10px 20px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(159, 189, 201);
+    box-shadow: 0 10px px rgba(0, 0, 0, 0.2);
+}
+
+.navbar img{
+    width: 150px;
+    position: relative;
+    right: -15px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 8px 12px;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.menu a:hover {
+    color: #ff9900;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+
+/* Search container */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-icon {
+    font-size: 22px;
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    left: -20px;
+    transition: color 0.3s;
+  }
+  
+  .search-icon:hover {
+    color: #ff9900;
+  }
+  
+  /* Search bar with checkbox trick */
+  #search-toggle {
+    display: none;
+  }
+  
+  .search-bar {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background-color: #FFFACD;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  #search-toggle:checked + .search-bar {
+    display: block;
+  }
+  
+  .search-bar input {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: rgb(160, 216, 229);
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+    }
+
+    .menu a {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .menu-toggle:checked ~ .menu {
+        display: flex;
+        color: #000;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+}
+
+
+
+
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="Kids_Zone_Logo[1].png" alt="">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        <!-- Search Section -->
+    <div class="search-container">
+        <!-- Checkbox for toggling search bar -->
+        <label for="search-toggle" class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></label>
+        <input type="checkbox" id="search-toggle">
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." required>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>
